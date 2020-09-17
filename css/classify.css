@@ -1,0 +1,44 @@
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-screenshot {
+  object-fit: cover;
+  object-position: top;
+  width: 900px;
+  height: 800px;
+}
+
+.ad-screenshot {
+  max-width: 900px;
+  display: block;
+  margin: auto;
+}
+
+.screenshot-container {
+  border: 1px solid #999999;
+  padding: 4px;
+  margin: 40px auto;
+  max-width: 900px;
+  background-color: #eeeeee;
+}
+
+.screenshot-heading {
+  text-align: center;
+  color: #333333;
+  font-size: 9pt;
+  padding: 2px;
+}
+
+.classify-sidebar {
+  padding: 6px;
+}
+
+#ad {
+  border-bottom: 1px solid rgb(56, 56, 56);
+}
+
+body {
+  padding: 10px 20px;
+}

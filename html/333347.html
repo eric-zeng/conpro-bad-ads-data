@@ -1,0 +1,60 @@
+<html><head>
+  <title>View HTML</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/classify.css">
+</head>
+
+<body>
+  <div id="header">
+    
+      <div>Ad ID: 333347</div>
+    
+  </div>
+  <div class="code-block">
+    <code>
+      &lt;div class="mvp-widget-feat2-side-ad left relative" detectedad="3"&gt;
+&lt;div class="clear: both;"&gt;&amp;nbsp;&lt;/div&gt;&lt;div class="rs_ad_block front-page-video-side" style="margin: 0 auto; text-align: center; min-height: 250px; min-width: 300px;"&gt;
+&lt;div id="videoside_ll_target"&gt;&lt;div class="proper-ad-unit" mutatedelement="435"&gt;&lt;div id="proper-ad-rawstory_front_2" data-google-query-id="CJG049KujucCFWoCrQYdVf4IEw" mutatedelement="450" style="min-width: 300px; min-height: 250px;"&gt;&lt;div id="google_ads_iframe_/5376056/rawstory_front_2_0__container__" mutatedelement="446" style="border: 0pt none;"&gt;&lt;iframe id="google_ads_iframe_/5376056/rawstory_front_2_0" title="3rd party ad content" name="google_ads_iframe_/5376056/rawstory_front_2_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" mutatedelement="451" style="border: 0px; vertical-align: bottom;" data-google-container-id="8" data-load-complete="true"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href="#report-ad" data-aid="proper-ad-rawstory_front_2" class="call-modal report-ad" mutatedelement="453"&gt;Report Advertisement&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+				
+				var videoside_ll_code = "&lt;div class='proper-ad-unit'&gt;"+
+										"&lt;div id='proper-ad-rawstory_front_2'&gt;"+
+											"&lt;scri"+"pt&gt;propertag.cmd.push(function() { proper_display('rawstory_front_2'); });&lt;/scr"+"ipt&gt;"+
+										"&lt;/div&gt;"+
+									"&lt;/div&gt;";
+									
+				var videoside_target = jQuery( '#videoside_ll_target' );
+				var videoside_offset = videoside_target.offset();
+				var videoside_ll_triggered_flag = false;
+				
+				var screen_height = jQuery( window ).height();
+				
+				jQuery(window).scroll(function() {
+					
+					var scroll_pos = jQuery(window).scrollTop();
+					videoside_offset = videoside_target.offset();
+					
+					/* console.log( '####### FP video side ########' );
+					console.log( 'll scroll pos: ' + scroll_pos );
+					console.log( 'offset top: ' + videoside_offset.top );
+					console.log( 'll triggered: ' + videoside_ll_triggered_flag  );
+					console.log( 'screen height: ' + screen_height ); */
+					
+					if( scroll_pos &gt; ( videoside_offset.top - ( screen_height * 2 ) ) ) {
+						if(  videoside_ll_triggered_flag == false ){
+							console.log( "### FIRED lazy load incontent FP video side  ###" );
+							videoside_target.html( videoside_ll_code );
+							videoside_ll_triggered_flag = true;
+						}
+					}
+					
+				});
+				
+			&lt;/script&gt;
+&lt;/div&gt; &lt;/div&gt;
+    </code>
+  </div>
+
+
+
+</body></html>

@@ -1,0 +1,103 @@
+<html><head>
+  <title>View HTML</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/classify.css">
+</head>
+
+<body>
+  <div id="header">
+    
+      <div>Ad ID: 306171</div>
+    
+  </div>
+  <div class="code-block">
+    <code>
+      &lt;div class="alt_ad_block main-sidebar-top" detectedad="12"&gt;			&lt;!-- MAIN SIDE BAR TOP --&gt;
+			
+			&lt;div id="sticky-container" class="alt_ad_block" style="width: 100%; height: 1200px; background: #fff; position: relative;"&gt;
+				&lt;div style="min-height: 300px; position: fixed; top: 100px; min-width: 300px; margin: 0px;" id="sticky-target"&gt;
+					&lt;!-- PROPER --&gt;
+					&lt;div class="proper-ad-unit" style="text-align: center; margin: 0 auto;"&gt;
+						&lt;div id="proper-ad-alternet_side_1" data-google-query-id="CID5i5zOiecCFVh-YgodWVgMIQ" mutatedelement="272" style="min-width: 160px; min-height: 250px;"&gt;&lt;div mutatedelement="273"&gt;&lt;iframe mutatedelement="274" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" sandbox="allow-pointer-lock allow-popups allow-same-origin allow-scripts" src="javascript:&amp;quot;&lt;html&gt;&lt;body style='background:transparent'&gt;&lt;/body&gt;&lt;/html&gt;&amp;quot;" style="overflow: hidden; border: 0px; vertical-align: bottom;"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href="#report-ad" data-aid="proper-ad-alternet_side_1" class="call-modal report-ad" mutatedelement="275"&gt;Report Advertisement&lt;/a&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;script&gt;
+					
+					var container = jQuery('#sticky-container');
+					var target = jQuery('#sticky-target');
+					
+					// first need to determine when to start scrolling and when to stop
+					var container_offset = container.offset();
+					var container_height = container.height();
+					
+					var target_height = 0;
+					var sticky_start_point = 0;
+					var target_stop_offset = 0;
+					var sticky_stop_point = 0;
+					var scroll_offset = 0;
+					var offset_sticky_stop_point = 0
+					var scroll_offset = 0;
+					
+					function calculate_start_stop(){
+						
+						target_height = target.height();
+						sticky_start_point = container_offset.top + 100;
+						target_stop_offset = container_height - target_height - 0;
+						sticky_stop_point = container_offset.top + target_stop_offset - 80;
+						
+						var tmp_offset = container.offset();
+						scroll_offset = tmp_offset.top - container_offset.top;
+						offset_sticky_stop_point = scroll_offset + sticky_stop_point;
+						
+						/*
+						console.log( '####################################' );
+						console.log( 'Scroll offset: ' + scroll_offset );
+						console.log( 'target height ' + target_height );
+						console.log( 'container_offset.top ' + container_offset.top );
+						console.log( 'target_stop_offset ' + target_stop_offset );
+						console.log( 'start scrolling with page at ' + sticky_start_point );
+						console.log( 'stop scrolling with page at ' + offset_sticky_stop_point );
+						*/
+					}
+						
+					var win_width = jQuery(window).width();
+					
+					if( win_width &gt; 768 ){
+						
+						jQuery(window).scroll(function() {
+							
+							calculate_start_stop();
+							
+							var scroll_pos = jQuery(window).scrollTop();
+							//console.log( 'Scroll position: ' + scroll_pos );
+							
+							if ( scroll_pos &gt; sticky_start_point &amp;&amp; scroll_pos &lt; offset_sticky_stop_point ){
+								target.css('position','fixed');
+								target.css('top','100px');
+								//console.log( 'STICK' );
+							} else if ( scroll_pos &lt; sticky_start_point ){
+								target.css('position','absolute');
+								target.css('top','1px');
+								//console.log( 'UNSTICK TOP' );
+							} else if ( scroll_pos &gt; offset_sticky_stop_point ){
+								target.css('position','absolute');
+								target.css('top', target_stop_offset+'px');
+								//console.log( "UNSTICK BOTTOM" );
+							}
+						});
+						
+					} else {
+						container.css({'height':'auto','min-height':'250px','text-align':'center'});
+						target.css({'position':'relative','min-height':'250px'});
+					}
+					
+				&lt;/script&gt;
+			&lt;/div&gt;
+			
+			&lt;/div&gt;
+    </code>
+  </div>
+
+
+
+</body></html>

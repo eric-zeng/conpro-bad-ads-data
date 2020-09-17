@@ -1,0 +1,94 @@
+<html><head>
+  <title>View HTML</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/classify.css">
+</head>
+
+<body>
+  <div id="header">
+    
+      <div>Ad ID: 433919</div>
+    
+  </div>
+  <div class="code-block">
+    <code>
+      &lt;div class="ad-container  full-width-ad" detectedad="11"&gt;
+	&lt;div id="cm-ad-HS02-h1" class="HS02 cm-ad wallpaper-see-through" style="" data-google-query-id="CNjf54zLmecCFYmbZAodVZYOXw"&gt;&lt;div id="google_ads_iframe_21849707860/Atlanta_NP/ajc_web_default/life/arts_culture_8__container__" mutatedelement="483" style="border: 0pt none; margin: auto; text-align: center; width: 970px; height: 250px;"&gt;&lt;iframe frameborder="0" src="https://tpc.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_21849707860/Atlanta_NP/ajc_web_default/life/arts_culture_8" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="970" height="250" data-is-safeframe="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" mutatedelement="489" data-google-container-id="8" style="border: 0px; vertical-align: bottom;" data-load-complete="true"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;
+
+    &lt;script style="display:none"&gt;
+            googletag.cmd.push(function () {
+                
+                var defaultSizes = [];
+                
+                    defaultSizes.push([728, 90]);
+                
+                var mapping = googletag.sizeMapping();
+                var sizes = [];
+                
+                    sizes = [];
+                    
+                        sizes.push([300, 250]);
+                    
+                    mapping.addSize(
+                        [1, 1], sizes
+                    );
+                
+                    sizes = [];
+                    
+                        sizes.push([728, 90]);
+                    
+                    mapping.addSize(
+                        [768, 1], sizes
+                    );
+                
+                    sizes = [];
+                    
+                        sizes.push([728, 90]);
+                    
+                        sizes.push([970, 250]);
+                    
+                    mapping.addSize(
+                        [972, 1], sizes
+                    );
+                
+                var conf = {
+                    name: 'HS02',
+                    id: 'cm-ad-HS02',
+                    sizes: defaultSizes,
+                    group: 'wallpaper-see-through',
+                    adunit: cmg.adconf.adunit,
+                    outofpage: false,
+                    companion: false,
+                    mapping: mapping.build(),
+                    targeting: {
+                        ad_slot: 'HS02',
+                        breakpoints: [1, 768, 972]
+                    }
+                };
+                cmg.adconf.slotconf.push(conf);
+                var slot = harmony.defineSlot(conf);
+
+                
+                    if (slot) {
+                        
+                        var bpMap = {},
+                            activeBPs = [1, 768, 972];
+                        activeBPs.forEach(function (bp) {
+                            bpMap[bp] = true;
+                        });
+
+                        
+                        harmony.on('update/slots', function (bp) {
+                            slot.enabled = bp in bpMap;
+                        }, true);
+                    }
+                
+            });
+        &lt;/script&gt;
+&lt;/div&gt;
+    </code>
+  </div>
+
+
+
+</body></html>

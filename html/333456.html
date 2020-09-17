@@ -1,0 +1,107 @@
+<html><head>
+  <title>View HTML</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/classify.css">
+</head>
+
+<body>
+  <div id="header">
+    
+      <div>Ad ID: 333456</div>
+    
+  </div>
+  <div class="code-block">
+    <code>
+      &lt;div id="sticky-container_2" class="alt_ad_block" detectedad="6"&gt;
+&lt;div id="sticky-target_2" style="position: fixed; top: 92px;"&gt;
+
+&lt;div class="proper-ad-unit" style="margin-top: 5px;"&gt;
+&lt;div id="proper-ad-rawstory_side_4" mutatedelement="720" style="min-width: 160px; min-height: 250px;" data-google-query-id="CIy-tIixjucCFYeAYgodh1EGzw"&gt;&lt;div id="google_ads_iframe_/5376056/rawstory_side_4_0__container__" mutatedelement="721" style="border: 0pt none;"&gt;&lt;iframe id="google_ads_iframe_/5376056/rawstory_side_4_0" title="3rd party ad content" name="google_ads_iframe_/5376056/rawstory_side_4_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" mutatedelement="722" data-google-container-id="a" style="border: 0px; vertical-align: bottom;" data-load-complete="true"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href="#report-ad" data-aid="proper-ad-rawstory_side_4" class="call-modal report-ad" mutatedelement="381"&gt;Report Advertisement&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+					
+					var container_2 = jQuery('#sticky-container_2');
+					var target_2 = jQuery('#sticky-target_2');
+					
+					// first need to determine when to start scrolling and when to stop
+					var container_offset_2 = container_2.offset();
+					var container_height_2 = container_2.height();
+					
+					var target_height_2 = 0;
+					var sticky_start_point_2 = 0;
+					var target_stop_offset_2 = 0;
+					var sticky_stop_point_2 = 0;
+					var scroll_offset_2 = 0;
+					var offset_sticky_stop_point_2 = 0
+					var scroll_offset_2 = 0;
+					
+					function calculate_start_stop_2(){
+						
+						target_height_2 = target_2.height();
+						
+						container_offset_2 = container_2.offset();
+						container_height_2 = container_2.height();
+						
+						sticky_start_point_2 = container_offset_2.top + 80;
+						target_stop_offset_2 = container_height_2 - target_height_2 - 0;
+						sticky_stop_point_2 = container_offset_2.top + target_stop_offset_2 - 80;
+						
+						var tmp_offset_2 = container_2.offset();
+						scroll_offset_2 = tmp_offset_2.top - container_offset_2.top;
+						offset_sticky_stop_point_2 = scroll_offset_2 + sticky_stop_point_2;
+						
+						/*
+						console.log( '############    2    #############' );
+						console.log( 'Scroll offset: ' + scroll_offset_2 );
+						console.log( 'target height ' + target_height_2 );
+						console.log( 'container_offset.top ' + container_offset_2.top );
+						console.log( 'target_stop_offset ' + target_stop_offset_2 );
+						console.log( 'start scrolling with page at ' + sticky_start_point_2 );
+						console.log( 'stop scrolling with page at ' + offset_sticky_stop_point_2 );
+						*/
+					}
+						
+					jQuery(window).scroll(function() {
+						
+						if( window.innerWidth &gt; 899 ){
+							
+							calculate_start_stop_2();
+							
+							var scroll_pos_2 = jQuery(window).scrollTop();
+							// console.log( 'Scroll position: ' + scroll_pos_2 );
+							
+							if ( scroll_pos_2 &gt; sticky_start_point_2 &amp;&amp; scroll_pos_2 &lt; offset_sticky_stop_point_2 ){
+								target_2.css('position','fixed');
+								target_2.css('top','92px');
+								// console.log( 'STICK 1' );
+							} else if ( scroll_pos_2 &lt; sticky_start_point_2 ){
+								target_2.css('position','absolute');
+								target_2.css('top','1px');
+								// console.log( 'UNSTICK TOP 1' );
+							} else if ( scroll_pos_2 &gt; offset_sticky_stop_point_2 ){
+								target_2.css('position','absolute');
+								target_2.css('top', target_stop_offset_2+'px');
+								// console.log( "UNSTICK BOTTOM 1" );
+							}
+
+						} else {
+							
+							jQuery(window).scroll(function(){
+								//console.log( 'container 1 height: ' + container_2.height() );
+								//console.log( 'target 1 height: ' + target_2.height() );
+								container_2.css( 'height' , target_2.height() );
+							});
+							
+						}
+						
+					});
+						
+				&lt;/script&gt;
+&lt;/div&gt;
+    </code>
+  </div>
+
+
+
+</body></html>
