@@ -17,7 +17,7 @@ Deceptive Ads on News and Misinformation Websites](https://homes.cs.washington.e
 
 ### IMPORTANT
 The screenshots folder is too large for this git repository! Please download
-the tar.gz archive from [homes.cs.washington.edu/~ericzeng/conpro_screenshots.tar.gz](homes.cs.washington.edu/~ericzeng/conpro_screenshots.tar.gz)
+the tar.gz archive from [https://homes.cs.washington.edu/~ericzeng/conpro_screenshots.tar.gz](https://homes.cs.washington.edu/~ericzeng/conpro_screenshots.tar.gz)
 and uncompress it into a folder called `/screenshots`.
 
 ### Files
